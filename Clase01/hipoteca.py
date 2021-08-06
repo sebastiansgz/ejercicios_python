@@ -18,3 +18,5 @@ while saldo > 0:
         total_pagado += pago_mensual      
       
 print(f'Total pagado: {round(total_pagado, 2)} en {meses}')  #Preguntar por el numero 1 o 2 
+
+## mensaje prueba commit 2
