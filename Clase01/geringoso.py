@@ -11,3 +11,5 @@ for c in cadena:
         capadepenapa = capadepenapa + c
             
 print(capadepenapa)
+
+#OUTOUT: Geperipingoposopo
