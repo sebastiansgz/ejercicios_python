@@ -9,18 +9,8 @@ def buscar_precio(fruta):
                     precio_fruta = float(row[1])
                 print(f'El precio de la {fruta} es: {precio_fruta}')         
         if is_there == False:
-            print(f'{fruta} no figura en el listado de precios')     
-                                              
-                      
-                 
-                
-
-
-                                      
-                 
-                
-    
-                
-    
+            print(f'{fruta} no figura en el listado de precios')
+            
+               
 fruta = input('Ingrese la fruta para consultar su precio: ')
 precio = buscar_precio(fruta)
