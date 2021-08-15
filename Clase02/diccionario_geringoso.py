@@ -19,8 +19,14 @@ def crear_diccionario(lista):
     return dict(diccionario_geringoso)  
 
 
-
 print(crear_diccionario(lista))
+
+'''
+OUTPUT:
+
+{'banana': 'bapanapanapa', 'manzana': 'mapanzapanapa', 'mandarina': 'mapandaparipinapa'}
+
+'''
 
 
 
