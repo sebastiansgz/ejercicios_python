@@ -58,12 +58,15 @@ for lote in camion:
 balance = venta_total - costo_total
 
 
-print(f'Balance: {balance}')
+print(f'BALANCE: \n Costo total: {costo_total} \n Total ventas: {venta_total} \n Diferencia: {balance}')
 
 '''
 OUTPUT
 
 Alerta: En alguna/s linea/s del archivo Data/precios.csv no se encuentran los elementos necesarios para armar un par "key:value"
-Balance: 15314.949999999997
+BALANCE: 
+ Costo total: 47671.15 
+ Total ventas:62986.1 
+ Diferencia: 15314.949999999997
 
 '''
