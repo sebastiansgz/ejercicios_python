@@ -6,8 +6,7 @@ def costo_camion(archivo):
         rows = csv.reader(file)
         headers = next(rows)    
         costo_total = float()
-        for line in file:
-            row = line.split(',')
+        for row in rows:
             try:
                 costo_por_fruta = float(row[1]) * float(row[2])
                 costo_total += costo_por_fruta
