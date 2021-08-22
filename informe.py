@@ -16,7 +16,7 @@ else:
     archivo_precios ='Data/precios.csv'
 
 
-# ---------------------------------------------- Defino las funciones------------------------------------
+# ------------------------- Defino las funciones------------------------------------
 #Función para manejar el archivo del camion.
 def leer_camion(nombre_archivo):
     camion = []                                        # Importante: Definir la lista vacia dentro de la función así inicia vacia siempre.
@@ -31,19 +31,16 @@ def leer_camion(nombre_archivo):
     return camion
 
 #Función para manejar el archivo de precios.
-def leer_precios(archivo_precios):
-    precios = []
-    with open(archivo_precios, 'rt') as file:        
+def leer_precios(nombre_archivo):
+    precios = {}
+    with open(nombre_archivo) as file:        
         rows = csv.reader(file)
-        for n_row, row in enumerate(rows, start= 1):
+        for row in rows:
             try:
-                nombre = row[0]            
-                precio = float(row[1])
-                par = (nombre , precio)
-                precios.append(par)                
+                precios[row[0]] = float(row[1])
             except IndexError:
-                print(f'Alerta: En la linea {n_row} del archivo {archivo_precios} no se encuentran los elementos necesarios para armar un par "key:value"')
-    return dict(precios)
+                print('En alguna/s linea/s del archivo no hay elementos para armar un par "key:value"')
+    return precios
 
 # Función para calcular el balance. 
 

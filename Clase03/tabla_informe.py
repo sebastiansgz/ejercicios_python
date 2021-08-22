@@ -31,19 +31,16 @@ def leer_camion(nombre_archivo):
     return camion
 
 #Función para manejar el archivo de precios.
-def leer_precios(archivo_precios):
-    precios = []
-    with open(archivo_precios, 'rt') as file:        
+def leer_precios(nombre_archivo):
+    precios = {}
+    with open(nombre_archivo) as file:        
         rows = csv.reader(file)
-        for n_row, row in enumerate(rows, start= 1):
+        for row in rows:
             try:
-                nombre = row[0]            
-                precio = float(row[1])
-                par = (nombre , precio)
-                precios.append(par)                
+                precios[row[0]] = float(row[1])
             except IndexError:
-                print(f'Alerta: En la linea {n_row} del archivo {archivo_precios} no se encuentran los elementos necesarios para armar un par "key:value"')
-    return dict(precios)
+                print('En alguna/s linea/s del archivo no hay elementos para armar un par "key:value"')
+    return precios
 
 # Función para calcular el balance. 
 
@@ -77,9 +74,10 @@ def hacer_tabla_balance(filas_tabla):
     headers = ('Nombre', 'Cajones', 'Precio', 'Cambio')
     filas_tabla = hacer_balance(camion,precios)
     print(f"{headers[0]:>10} {headers[1]:>10} {headers[2]:>10} {headers[3]:>10}")       
-    print(f"{'-'*int(10):>10} {'-'*int(10):>10} {'-'*int(10):>10} {'-'*int(10):>10}")     
+    print(f"{'-'*int(10):>10} {'-'*int(10):>10} {'-'*int(10):>10} {'-'*int(10):>10}")    
     for nombre, cajones, precio, cambio in filas_tabla:
-        print(f'{nombre:>10s} {cajones:>10d} {precio:>10.2f} {cambio:>10.2f}')
+        precio = '$'+str(precio)               
+        print(f"{nombre:>10s} {cajones:>10d} {precio:>10} {cambio:>10.2f}")
     return
 
 
