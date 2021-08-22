@@ -93,7 +93,18 @@ hacer_tabla_balance(filas_tabla)            # Paso la lista con tuplas por esta 
 
 #calcular_balance(camion,precios)
 
+'''
+OUTPUT:
 
+    Nombre    Cajones     Precio     Cambio
+---------- ---------- ---------- ----------
+      Lima        100      $32.2       8.02
+   Naranja         50      $91.1      15.18
+     Caqui        150    $103.44       2.02
+ Mandarina        200     $51.23      29.66
+   Durazno         95     $40.37      33.11
+
+'''
 
 
 
