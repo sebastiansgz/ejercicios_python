@@ -1,7 +1,7 @@
 '''
 Este script se puede ejecutar acompañado de dos argumentos que indican la ubicación de camion.csv y precios.csv respectivamente.
 
-En caso de no proveer la ubicacion de dichos archivos este script asume que se trabaja en 'ejercicios_python/Clase03/tabla_filas_tabla.py'
+En caso de no proveer la ubicacion de dichos archivos este script asume que se trabaja en 'ejercicios_python/Clase03/tabla_infome.py'
 '''
 import csv
 import sys
@@ -35,11 +35,11 @@ def leer_precios(nombre_archivo):
     precios = {}
     with open(nombre_archivo) as file:        
         rows = csv.reader(file)
-        for row in rows:
+        for i, row in enumerate(rows, start=0):
             try:
                 precios[row[0]] = float(row[1])
             except IndexError:
-                print('En alguna/s linea/s del archivo no hay elementos para armar un par "key:value"')
+                print(f'En la línea {i} del archivo "{nombre_archivo}"" no hay elementos para armar un par "key:value"')
     return precios
 
 # Función para calcular el balance. 
@@ -73,8 +73,10 @@ def hacer_balance(camion,precios):
 def hacer_tabla_balance(filas_tabla):
     headers = ('Nombre', 'Cajones', 'Precio', 'Cambio')
     filas_tabla = hacer_balance(camion,precios)
-    print(f"{headers[0]:>10} {headers[1]:>10} {headers[2]:>10} {headers[3]:>10}")       
-    print(f"{'-'*int(10):>10} {'-'*int(10):>10} {'-'*int(10):>10} {'-'*int(10):>10}")    
+    for i, header in enumerate(headers, start= 1):
+        print(f'{header:>10}', end =' ')        
+    print('\b')                                  
+    print((f"{'-'*int(10):>10} ")*4)                     
     for nombre, cajones, precio, cambio in filas_tabla:
         precio = '$'+str(precio)               
         print(f"{nombre:>10s} {cajones:>10d} {precio:>10} {cambio:>10.2f}")
@@ -92,19 +94,6 @@ filas_tabla = hacer_balance(camion,precios) # Tengo una lista con tuplas. Cada t
 hacer_tabla_balance(filas_tabla)            # Paso la lista con tuplas por esta función y la formateo en una tabla.
 
 #calcular_balance(camion,precios)
-
-'''
-OUTPUT:
-
-    Nombre    Cajones     Precio     Cambio
----------- ---------- ---------- ----------
-      Lima        100      $32.2       8.02
-   Naranja         50      $91.1      15.18
-     Caqui        150    $103.44       2.02
- Mandarina        200     $51.23      29.66
-   Durazno         95     $40.37      33.11
-
-'''
 
 
 

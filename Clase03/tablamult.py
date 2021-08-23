@@ -17,17 +17,17 @@ def crear_tabla(filas_tabla):
         print(f"{x:>2} ", end=' ')                         # Formateo del encabezado
     print(f"\n{'-'*42}")                                   # Linea de separacion
     for n_fila, fila in enumerate(filas_tabla):            #Incio del loop para crear las filas.
-        print(f'{n_fila}:', end=' ')                       #Impresion del numero de fila fomateado con ':'
+        print(f'{n_fila}:', end=' ')                       #Impresion del número de fila fomateado con ':'
         for x in fila:                                     # Inicio de loop para imprimer cada elemento de la fila en columnas.
-            print(f"{x:>2} ", end=' ')                     # Formateo para imprimir cada elemto de la lista uno junto al otro con una separacion para lograr las columnas.
-        print('\n')                                        # Agrego \n al final de cada fila para emepzar una nueva fila de la tabla.
+            print(f"{x:>2} ", end=' ')                     # Formateo para imprimir cada elemento de una fila en una misma linea con una separacion para lograr las columnas.
+        print('\n')                                        # Agrego \n al final de cada fila para empezar una nueva fila de la tabla.
     return
 
 nums_0 = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)                              # Estado inical
 nums_1 = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)                              # Esto debe ser una constante que se suma.
 
-                              
 nums_n = suma_tuplas(nums_0, nums_1)
+
 
 filas_tabla = obtener_filas(nums_1,nums_n)
 crear_tabla(filas_tabla)

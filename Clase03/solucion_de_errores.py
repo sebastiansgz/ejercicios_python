@@ -2,6 +2,7 @@
 #Ejercicios de errores en el código
 #%%
 #Ejercicio 3.1. Semántica
+
 #Comentario: Detecté 2 errores:
 #   1. El programa estaba preparado sólo para encontrar la letra "a" minúscula. Arreglé esto usando el método lower() en la linea 16.
 #   2. El programa no terminaba de evaluar cada elemento de la cadena asignada a  "expresion".
@@ -31,6 +32,7 @@ tiene_a('UNSAM 2020')
 
 #%%
 #Ejercicio 3.2. Sintaxis
+
 #Comentario: Los errores estaban en:
 #   1. Faltaban los dos puntos ':' al final al definir la función tiene_a()
 #   2. Al crear el while faltaban también los dos puntos al final.
@@ -54,6 +56,7 @@ tiene_a('UNSAM 2020')
 
 #%%
 #Ejercicio 3.3. Tipos
+
 #Comentario: El programa no estaba preparado para recibir otro tipo diferente de las strings. Ahora cualquier expresion se convierte a string para que el programa pueda ejecturarse, para esto usé str().
 
 def tiene_uno(expresion):
@@ -70,12 +73,10 @@ def tiene_uno(expresion):
 
 tiene_uno(1984)
 
-
-
-
 # %%
 
-#Ejercicio 3.3. Alcances
+#Ejercicio 3.4 Alcances
+
 #Comentario: Es necesario el 'return' para que pueda devolvernos el resultdo después de haberse ejecutado la función.
 
 def suma(a,b):
@@ -87,6 +88,8 @@ b = 3
 c = suma(a,b)
 print(f"La suma da {a} + {b} = {c}")
 # %%
+
+# Ejercicio 3.5 Pisando memoria
 
 # Comentario:El error consiste en que dentro de for al escribir algo como  'registro[encabezado[0]]' estaría reasignando el valor de cada key que sea igual a registro[encabezado[0]]. Es decir que todas las keys que  sean iguales a 'nombre' van a tomar como valor el nombre de la fruta en cada iteración. Lo mismo ocurre con las otras keys 'cajones'  y 'precio'.
 # por esto, al llegar a la ultima fila todas las keys toman como valor los valores de esta ultima fila de la iteración.
@@ -111,4 +114,3 @@ def leer_camion(nombre_archivo):
 
 camion = leer_camion('../Data/camion.csv')
 pprint(camion)
-# %%

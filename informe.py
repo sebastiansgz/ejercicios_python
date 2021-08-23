@@ -12,7 +12,7 @@ if len(sys.argv) == 3:
     archivo_camion = sys.argv[1] 
     archivo_precios = sys.argv[2] 
 else:
-    archivo_camion = 'Data/camion.csv'
+    archivo_camion = 'Data/fecha_camion.csv'
     archivo_precios ='Data/precios.csv'
 
 
@@ -35,11 +35,11 @@ def leer_precios(nombre_archivo):
     precios = {}
     with open(nombre_archivo) as file:        
         rows = csv.reader(file)
-        for row in rows:
+        for n_row, row in enumerate(rows, start=0):
             try:
                 precios[row[0]] = float(row[1])
             except IndexError:
-                print('En alguna/s linea/s del archivo no hay elementos para armar un par "key:value"')
+                print(f'Alerta: En la linea {n_row} del archivo "{nombre_archivo}" no hay elementos para armar un par "key:value"')
     return precios
 
 # Función para calcular el balance. 
@@ -67,10 +67,10 @@ calcular_balance(camion,precios)
 '''
 OUTPUT
 
-Alerta: En la linea 31 del archivo Data/precios.csv no se encuentran los elementos necesarios para armar un par "key:value"
+Alerta: En la linea 30 del archivo "Data/precios.csv" no hay elementos para armar un par "key:value"
 BALANCE: 
  Costo total: 47671.15 
  Total ventas: 62986.1
-La ganancia fue de: 15314.949999999997
+La ganacia fue de: 15314.949999999997
 
 '''
