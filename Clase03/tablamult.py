@@ -1,4 +1,4 @@
-def suma_tuplas(tupla1, tupla2):                            # Tengo una funcion que le doy dos tuplas de numeros y las suma.
+def suma_tuplas(tupla1, tupla2):                            # Tengo una funcion que le doy dos tuplas con numeros y las suma.
     return tuple(a + b for a, b in zip(tupla1, tupla2))
 
 
@@ -12,15 +12,15 @@ def obtener_filas(nums_1,nums_n):                           #Obtengo las filas p
     return filas_tabla
 
 def crear_tabla(filas_tabla):
-    print('   ', end= '')  
-    for x in nums_1:                   
-        print(f"{x:>2} ", end=' ')
-    print(f"\n{'-'*42}")
-    for n_fila, fila in enumerate(filas_tabla, start= 0):
-        print(f'{n_fila}:', end=' ')
-        for x in fila:              
-            print(f"{x:>2} ", end=' ')                
-        print('\n')        
+    print('   ', end= '')                                  # Espacio inicial del encabezado
+    for x in nums_1:                                       # Inicio del Loop para crear el encabezado
+        print(f"{x:>2} ", end=' ')                         # Formateo del encabezado
+    print(f"\n{'-'*42}")                                   # Linea de separacion
+    for n_fila, fila in enumerate(filas_tabla):            #Incio del loop para crear las filas.
+        print(f'{n_fila}:', end=' ')                       #Impresion del numero de fila fomateado con ':'
+        for x in fila:                                     # Inicio de loop para imprimer cada elemento de la fila en columnas.
+            print(f"{x:>2} ", end=' ')                     # Formateo para imprimir cada elemto de la lista uno junto al otro con una separacion para lograr las columnas.
+        print('\n')                                        # Agrego \n al final de cada fila para emepzar una nueva fila de la tabla.
     return
 
 nums_0 = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)                              # Estado inical
