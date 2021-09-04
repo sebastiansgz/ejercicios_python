@@ -2,7 +2,7 @@ def propagar(vector):
     # Recorro la lista de izq a derecha cada 0 a la derecha de un 1 es tranformado por otro 1 en una nueva lista
     izq_der = [0] 
     for fosforo in vector:
-        if fosforo == 0 and izq_der[-1] == 1:
+        if (fosforo == 0) and (izq_der[-1]) == 1:
             fosforo = 1
             izq_der.append(fosforo)
         else:

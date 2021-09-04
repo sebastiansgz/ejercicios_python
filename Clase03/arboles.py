@@ -118,7 +118,7 @@ print('\n \n3.22 INCLINACIÓN\n')
 for parque in parques:
     lista_arboles = leer_parque(archivo_arboles, parque)
     mas_inclinado = especimen_mas_inclinado(lista_arboles)
-    print(f'En el parque {parque} el árbol mas inclinado pertenece a la especie {mas_inclinado[1]} y tiene una inclinación de: {mas_inclinado[0]}°')
+    print(f'En el parque {parque} el árbol más inclinado pertenece a la especie {mas_inclinado[1]} y tiene una inclinación de: {mas_inclinado[0]}°')
     
 #-----------------3.24 INCLINACIÓN PROMEDIO  --------------------------------------------------------
 print('\n \n3.24 INCLINACIÓN PROMEDIO \n')
@@ -126,7 +126,7 @@ print('\n \n3.24 INCLINACIÓN PROMEDIO \n')
 for parque in parques:
     lista_arboles = leer_parque(archivo_arboles, parque)
     mas_inclinado_promedio = especie_promedio_mas_inclinada(lista_arboles)
-    print(f'En el parque {parque} la especie mas inclinada en promedio es {mas_inclinado_promedio[1]} con una inclinación promedio de: {mas_inclinado_promedio[0]}°')
+    print(f'En el parque {parque} la especie más inclinada en promedio es {mas_inclinado_promedio[1]} con una inclinación promedio de: {mas_inclinado_promedio[0]}°')
 
 
     
