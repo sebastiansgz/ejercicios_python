@@ -88,6 +88,14 @@ def especie_promedio_mas_inclinada(lista_arboles):
     return mas_inclinado_promedio
 
 
+def leer_parque2(archivo_arboles):
+    with open(archivo_arboles, 'rt') as file:
+        rows = csv.reader(file)
+        headers =  next(rows)
+        row = next(rows)
+        arboleda = [ dict(zip(headers,row)) for row in rows ]
+    return arboleda
+
 
 
 
@@ -128,8 +136,15 @@ for parque in parques:
     mas_inclinado_promedio = especie_promedio_mas_inclinada(lista_arboles)
     print(f'En el parque {parque} la especie más inclinada en promedio es {mas_inclinado_promedio[1]} con una inclinación promedio de: {mas_inclinado_promedio[0]}°')
 
+#--------------4.16 ALTURAS JACARANDÁ LIST COMPRESSION------------------------------------------------
+arboleda =  leer_parque2(archivo_arboles)
 
+H = [float(arbol['altura_tot']) for arbol in arboleda if arbol['nombre_com'] == 'Jacarandá']
     
+ #-------------4.17 ALTURAS Y DIAMETROS---------------------------------------------------------------
+
+H_d = [(float(arbol['diametro']),float(arbol['altura_tot'])) for arbol in arboleda if arbol['nombre_com'] == 'Jacarandá']
+   
 
 
 
